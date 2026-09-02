@@ -1,15 +1,16 @@
+const fs = require('fs-extra');
 const chalk = require('chalk');
 const path = require('path');
 const { log, createOraDots, getText } = global.utils;
 
-// Updated Big Text Header
+// Updated Big Text Header - MAMUN (Blue)
 const bigText = `
-░█████╗░██╗░░██╗░█████╗░░██████╗██╗░░██╗
-██╔══██╗██║░██╔╝██╔══██╗██╔════╝██║░░██║
-███████║█████═╝░███████║╚█████╗░███████║
-██╔══██║██╔═██╗░██╔══██║░╚═══██╗██╔══██║
-██║░░██║██║░╚██╗██║░░██║██████╔╝██║░░██║
-╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝
+███╗░░░███╗░█████╗░███╗░░░███╗██╗░░░██╗███╗░░██╗
+████╗░████║██╔══██╗████╗░████║██║░░░██║████╗░██║
+██╔████╔██║███████║██╔████╔██║██║░░░██║██╔██╗██║
+██║╚██╔╝██║██╔══██║██║╚██╔╝██║██║░░░██║██║╚████║
+██║░╚═╝░██║██║░░██║██║░╚═╝░██║╚██████╔╝██║░╚███║
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░╚═════╝░╚═╝░░╚══╝
 `;
 
 function header(title) {
@@ -27,7 +28,7 @@ function line(text) {
 module.exports = async function (api, createLine) {
 
 	// HEADER
-	console.log(chalk.green(bigText));
+	console.log(chalk.blue(bigText));
 	console.log(header("🚀 GOATBOT DATABASE"));
 	console.log(line("📦 Loading system resources…"));
 
@@ -38,7 +39,27 @@ module.exports = async function (api, createLine) {
 	log.info('DATABASE', `👤 User data: OK`);
 
 	// AUTO SYNC
-	if (api && global.GoatBot.config.database.autoSyncWhenStart == true) {
+	// Runs api.getThreadList(9999999, ...) — a full thread-list pull.
+	// Doing this on every single process restart (which can happen often:
+	// crashes, redeploys, session drops) is a traffic pattern a real
+	// browser never produces, and is one more signal Facebook's
+	// "automated behavior" detection can key off. So it's throttled here
+	// to run at most once per AUTO_SYNC_MIN_INTERVAL_MS, persisted across
+	// restarts via a small local timestamp file (independent of DB type).
+	const AUTO_SYNC_MIN_INTERVAL_MS = 6 * 60 * 60 * 1000; // 6h
+	const lastAutoSyncPath = path.join(__dirname, '..', '..', 'database/data/lastAutoSync.json');
+	let shouldAutoSync = true;
+	let lastAutoSyncAt = 0;
+	try {
+		if (fs.existsSync(lastAutoSyncPath)) {
+			lastAutoSyncAt = (fs.readJsonSync(lastAutoSyncPath) || {}).lastAutoSyncAt || 0;
+			shouldAutoSync = (Date.now() - lastAutoSyncAt) >= AUTO_SYNC_MIN_INTERVAL_MS;
+		}
+	} catch {
+		shouldAutoSync = true;
+	}
+
+	if (api && global.GoatBot.config.database.autoSyncWhenStart == true && shouldAutoSync) {
 
 		console.log(header("🔄 AUTO SYNC ENABLED"));
 
@@ -86,6 +107,9 @@ module.exports = async function (api, createLine) {
 			spin._stop();
 			log.info('DATABASE', getText('loadData', 'refreshThreadDataSuccess', global.db.allThreadData.length));
 			console.log(chalk.green("✅ Auto Sync Complete!"));
+			try {
+				fs.writeJsonSync(lastAutoSyncPath, { lastAutoSyncAt: Date.now() }, { spaces: 2 });
+			} catch {}
 		}
 		catch (err) {
 			spin._stop();
@@ -97,8 +121,15 @@ module.exports = async function (api, createLine) {
 			});
 		}
 	}
+	else if (api && global.GoatBot.config.database.autoSyncWhenStart == true && !shouldAutoSync) {
+		log.info('DATABASE', `Auto sync skipped — last ran ${Math.round((Date.now() - lastAutoSyncAt) / 60000)}m ago (min interval 6h)`);
+	}
 
 	console.log(header("💻 SYSTEM READY"));
+
+	if (api && typeof api._connectE2EEAndMerge === "function" && global.GoatBot.config.e2ee?.enable !== false) {
+		await api._connectE2EEAndMerge();
+	}
 
 	return {
 		threadModel: threadModel || null,
@@ -112,3 +143,4 @@ module.exports = async function (api, createLine) {
 		sequelize
 	};
 };
+		
