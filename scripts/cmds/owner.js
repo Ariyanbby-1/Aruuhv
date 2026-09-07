@@ -6,7 +6,7 @@ module.exports = {
   config: {
     name: "owner",
     version: "1.3.0",
-    author: "亗•𝘔𝘈𝘔𝘜𝘕✿᭄",
+    author: "Mᴏʜᴀᴍᴍᴀᴅ Aᴋᴀsʜ",
     role: 0,
     shortDescription: "Owner information with image",
     category: "Information",
@@ -18,25 +18,25 @@ module.exports = {
   onStart: async function ({ api, event }) {
     const ownerText = 
 `╭─ 👑 Oᴡɴᴇʀ Iɴғᴏ 👑 ─╮
-│ 👤 Nᴀᴍᴇ       : 亗•𝘔𝘈𝘔𝘜𝘕✿᭄
-│🧸 Nɪᴄᴋ       : Vondo
+│ 👤 Nᴀᴍᴇ       : 亗^⁠_^𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡^_^ 𝐁𝐁'𝐙 ✿᭄
+│🧸 Nɪᴄᴋ       : AruuuH
 │ 🎂 Aɢᴇ        : 19+
-│ 💘 Rᴇʟᴀᴛɪᴏɴ : Sɪɴɢʟᴇ
-│ 🎓 Pʀᴏғᴇssɪᴏɴ : Sᴛᴜᴅᴇɴᴛ
-│ 📚 Eᴅᴜᴄᴀᴛɪᴏɴ : Iɴᴛᴇʀ 2ɴᴅ Yᴇᴀʀ
-│ 🏡 Lᴏᴄᴀᴛɪᴏɴ : 🄺🄷🅄🄻🄽🄷  
+│ 💘 Rᴇʟᴀᴛɪᴏɴ : Married 
+│ 🎓 Pʀᴏғᴇssɪᴏɴ : Business 
+│ 📚 Eᴅᴜᴄᴀᴛɪᴏɴ : chudling pong 
+│ 🏡 Lᴏᴄᴀᴛɪᴏɴ : Dhaka keraniganj 
 ├─ 🔗 Cᴏɴᴛᴀᴄᴛ ─╮
-│ 📘 Facebook  : https://www.facebook.com/share/171Y441F7H/
-│ 💬 Messenger: m.me/61558931578859
-│ 📞 WhatsApp  : wa.me/01830981279
+│ 📘 Facebook  : https://facebook.com/61582149885357
+│ 💬 messenger : m.me/aruuhbbz
+│ 📞 WhatsApp  : wa.me/01704471566
 ╰────────────────╯`;
 
-    const cacheDir = path.join(__dirname, "cache");
+   const cacheDir = path.join(__dirname, "cache");
     const imgPath = path.join(cacheDir, "owner.jpg");
 
     if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir);
 
-    const imgLink = "https://i.imgur.com/g0GpgfG.jpeg";
+    const imgLink = "https://i.imgur.com/KmX1XZp.jpeg";
 
     const send = () => {
       api.sendMessage(
@@ -55,3 +55,5 @@ module.exports = {
       .on("close", send);
   }
 };
+
+    
