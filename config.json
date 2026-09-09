@@ -13,7 +13,7 @@
   "language": "en",
   "notesLanguage": "change language using ISO 639-1 code",
   "nickNameBot": "🌸𝗠𝘆𝘀𝘁𝗿𝗶𝗹 𝗠𝗼𝗼𝗻 [𝙎𝙤𝙘𝙞𝙚𝙩𝙮]🌪️🚩",
-  "prefix": "-",
+  "prefix": ".",
   "noPrefix": {
     "enable": true,
     "notes": "true = only bot admins can use commands without prefix | false = everyone must use prefix"
