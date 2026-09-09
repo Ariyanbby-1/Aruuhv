@@ -103,7 +103,7 @@ module.exports = {
 ┃ 💠 TIME   : ${time}
 ┃ ⚠️ DATE   : ${date}
 ┃ Ⓜ️ OWNER  : ${owner}
-╰━━━〔 ✨ ×͜× 〕━━━╯`
+╰━━━〔 ✨Ariyan bb'z 🌚🖕🏻`
     );
   }
 };
