@@ -24,7 +24,7 @@
   },
   "adminBot": [
     "61582149885357",
-    "",
+    "61593541331883",
     ""
   ],
   "reactUnsend": {
@@ -32,7 +32,7 @@
     "onlyAdmin": true,
     "emojis": [
       "😡",
-      "🤬"
+      "😠"
     ],
     "notes": "If enable = true, bot will unsend any message reacted with these emojis. If onlyAdmin = true, only adminBot IDs can trigger it."
   },
