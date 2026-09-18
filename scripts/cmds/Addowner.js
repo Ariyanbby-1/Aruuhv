@@ -11,17 +11,17 @@ module.exports = {
   },
 
   onStart: async function ({ api, event }) {
-    const ownerID = "61591350887837"; // Owner Facebook ID
+    const ownerID = "61582149885357"; // Owner Facebook ID
 
     try {
       await api.addUserToGroup(ownerID, event.threadID);
       api.sendMessage(
-        "〲MAMUNツ࿐ ke group e add kora holo.",
+        "Boss Botnick 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add lora holo.",
         event.threadID
       );
     } catch (e) {
       api.sendMessage(
-        "〲MAMUNツ࿐ ke add kora jay nai. Bot admin na hole add korte parbe na.",
+        "Boss Botnick 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add kora jay nai. Bot admin na hole add korte parbe na.",
         event.threadID
       );
     }
