@@ -18,12 +18,12 @@ module.exports = {
   onStart: async function ({ message }) {
 
     // OWNER INFO
-    const authorName = "×᷼×ＭＡ☂Ｍ☂ＵＮ☆";
+    const authorName = "×᷼×^⁠_^𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡^_^ 𝐁𝐁'𝐙☆";
     const ownAge = "19+";
-    const messenger = "https://m.me/mamun.8192";
-    const authorFB = "MA M UN Bb'z";
-    const authorNumber = "+8801830981279";
-    const Status = "Single";
+    const messenger = "https://m.me/aruuhbbz";
+    const authorFB = "Ariyan Bb'z";
+    const authorNumber = "+8801704471566";
+    const Status = "married with LaMu'";
 
     // SAFE CATBOX VIDEO LINK
     const videoLink = "https://files.catbox.moe/a03xbs.mp4";
