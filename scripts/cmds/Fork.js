@@ -18,22 +18,22 @@ module.exports = {
  ✦━━━━━━━━━✦
 👑 𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟 𝗙𝗢𝗥𝗞 👑
 ✦━━━━━━━━━✦
-👑 𝗢𝗪𝗡𝗘𝗥 ➜ 𝗠𝗔𝗠𝗨𝗡
+👑 𝗢𝗪𝗡𝗘𝗥 ➜ 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 𝐁𝐁'𝐙
 🤖 𝗕𝗢𝗧 ➜ 𝗚𝗢𝗔𝗧 𝗕𝗢𝗧 𝗩𝟮
 ━━━━━━━━━━━
 🌐 𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟 𝗚𝗜𝗧𝗛𝗨𝗕
-🔗 https://github.com/MAMUN-GOAT-BOT/V2-.git
+Fork chaile cdum
 ━━━━━━━━━━━
-🎥 𝗩𝗜𝗗𝗘𝗢 𝗧𝗨𝗧𝗢𝗥𝗜𝗔𝗟 📺 https://youtu.be/_Qb7Pq0Xavs?si=-MaOtPPnBPVSbIFX
+https://i.imgur.com/g4LLkZJ.jpeg
 ━━━━━━━━━━
-𝗠𝗔𝗠𝗨𝗡 𝗚𝗢𝗔𝗧 𝗕𝗢𝗧 𝗩𝟮
+Fork chas kn bukacuda 
 ✦━━━━━━━━━✦
 `
  }
  },
 
  onStart: async function ({ message, getLang }) {
- const link = "https://github.com/MAMUN-GOAT-BOT/V2-.git";
+ const link = "";
  return message.reply(getLang("current", link));
  },
 
