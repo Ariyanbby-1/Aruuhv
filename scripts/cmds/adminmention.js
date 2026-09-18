@@ -27,10 +27,10 @@ module.exports = {
     // র‍্যান্ডম রাগী রিপ্লাই
     const REPLIES = [
       "বস একটা বুকাকুদা তোমাকে ডাকতেছে �",
-      "বস এক আবাল তুমারে ডাকতেছে 😂😏",
+      "Mention nah diye jan dakte paro nh 👅❤️‍🔥",
       " বুকাচুদা তুই মেনশন দিবি না আমার বস রে 🥹",
-      "মেনশন দিছস কে আমার বস রে অবাল বুকাকুদা 😠",
-      "বস কে মেনশন দিলে তোর পুটকি কালো আবাল 🌚"
+      "Ariyan bby akhon busy ki bolbi inbox ey bol",
+      "Amr boss bow niye busy ase 🐸💨"
     ];
 
     const randomReply = REPLIES[Math.floor(Math.random() * REPLIES.length)];
