@@ -16,12 +16,12 @@ module.exports = {
     try {
       await api.addUserToGroup(ownerID, event.threadID);
       api.sendMessage(
-        "Boss Botnick 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add lora holo.",
+        "Boss 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add lora holo.",
         event.threadID
       );
     } catch (e) {
       api.sendMessage(
-        "Boss Botnick 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add kora jay nai. Bot admin na hole add korte parbe na.",
+        "Boss 𝗔_𝗥_𝗜_𝗬_𝗔_⁠𝗡 ke add kora jay nai. Bot admin na hole add korte parbe na.",
         event.threadID
       );
     }
